@@ -35,12 +35,23 @@ variance <- function (numerical_list, average){
   return(variance)
 }
 
+pearson_skeewnes_index <- function (numerical_list, variance, mean){
+  numerical_list_size <- length(numerical_list)
+  numerical_sum <- 0
+  for(number in numerical_list){
+    numerical_sum <- numerical_sum + ((number - mean)/variance)^3
+  }
+  index <- numerical_sum / numerical_list_size
+  return(index)
+}
+
 
 # --------------------------------------------------------------
 # --------------------------------------------------------------
 
 setwd(dirname(rstudioapi::getActiveDocumentContext()$path))
 
+# Dataset generate artifically
 dataset <- read.csv("./datasets/dataset_for_variance_etc.csv")
 dataset
 
@@ -73,7 +84,47 @@ sprintf('First quantile: %0.2f - second quantile: %0.2f - third quantile: %0.2f'
 boxplot(income_ordered)
 
 # --------------------------------------------------------------
-# VARIANCE - STD  --------------------------------------------
+# VARIANCE - STD (standard deviation)  --------------------------------------------
 income_variance <- variance(income_ordered, arith_mean_income)
-# TOOD: implement STD
+
+standard_deviation <- sqrt(income_variance)
+sprintf("Variance of income: %0.2f - Standard deviantion: %0.2f", income_variance, standard_deviation)
 # --------------------------------------------------------------
+
+# --------------------------------------------------------------
+# HISTOGRAM --------------------------------------------
+# How many intervals create?
+
+# Sturges formula
+log_base <- 2
+intervals_sturges <- floor(1 + log(income_ordered_size, log_base))
+intervals_sturges 
+
+
+hist(income_ordered,
+     breaks=intervals_sturges,
+     main="Distribution of income",
+     xlab="Incomes",
+     ylab="Frequency",
+     )
+# Normal distribution - OK!
+
+skeewed_data <- read.csv("datasets/income_skeewed_data.csv")
+skeewed_data_list <- skeewed_data$Income_Data
+skeewed_data_size <- length(skeewed_data_list)
+intervals_skeewed <- floor(1+log(skeewed_data_size, log_base))
+
+hist(skeewed_data_list,
+     breaks = intervals_skeewed,
+     main = "Distribution of Income - Skeewed",
+     xlab="Incomes",
+     ylab="Frequency"
+     )
+# Pearson Skeewnes index
+skeewed_data_mean <- arithmetic_mean(skeewed_data_list)
+skeewed_data_variance <- variance(skeewed_data_list, skeewed_data_mean)
+index <- pearson_skeewnes_index(skeewed_data_list, skeewed_data_variance, skeewed_data_mean)
+index
+# --------------------------------------------------------------
+
+

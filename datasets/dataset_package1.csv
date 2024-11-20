@@ -1,0 +1,26 @@
+ID,Age,Gender,Income,Education,City,Satisfaction_Score,Purchase_Amount
+1,34,Male,52350.12,Bachelor's,New York,4,1234.56
+2,22,Female,48230.43,Master's,Los Angeles,3,857.32
+3,45,Male,60125.34,High School,Chicago,5,1423.67
+4,54,Male,39820.12,Master's,Houston,2,634.78
+5,28,Female,55023.45,Bachelor's,Phoenix,4,1134.12
+6,33,Other,49500.23,High School,New York,3,756.43
+7,61,Female,58234.34,Doctorate,Los Angeles,5,1342.98
+8,40,Male,43210.12,Bachelor's,Chicago,2,947.56
+9,27,Male,50234.45,High School,Houston,4,1245.76
+10,38,Female,48876.89,Bachelor's,Phoenix,3,945.32
+11,43,Other,52389.34,Master's,New York,4,1234.67
+12,25,Female,51123.45,High School,Los Angeles,2,634.89
+13,37,Male,52987.78,Bachelor's,Chicago,5,1346.78
+14,58,Female,45312.34,Master's,Houston,3,947.65
+15,31,Male,41234.12,Bachelor's,Phoenix,4,945.89
+16,42,Male,52123.67,Bachelor's,New York,3,1234.67
+17,50,Female,48765.34,Doctorate,Los Angeles,5,1134.78
+18,29,Female,53456.78,High School,Chicago,4,856.43
+19,53,Male,49876.12,Bachelor's,Houston,2,947.89
+20,21,Other,52389.67,Master's,Phoenix,3,1342.76
+21,56,Male,49123.45,Bachelor's,New York,5,1134.67
+22,47,Female,51234.78,High School,Los Angeles,3,856.98
+23,36,Other,50234.56,Master's,Chicago,4,945.67
+24,23,Female,48987.34,Bachelor's,Houston,2,1342.12
+25,41,Male,52456.78,Doctorate,Phoenix,3,947.34
